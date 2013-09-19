@@ -31,5 +31,6 @@ require([
     'routes/app'
 ], function (Backbone, AppRouter) {
     var appRouter = new AppRouter();
+
     Backbone.history.start();
 });

@@ -4,14 +4,15 @@ define([
     'jquery',
     'backbone',
     'views/matchupCollection',
-    'collections/matchup'
-], function ($, Backbone, MatchupCollectionView, MatchupCollection) {
+    'collections/matchup',
+    'views/home'
+], function ($, Backbone, MatchupCollectionView, MatchupCollection, HomeView) {
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
         routes: {
         	'': 'matchups',
-        	'highfive': 'highfive'
+        	'home': 'home'
         },
         matchups: function() {
         	// Fat models, skinny controllers, dude - So I guess this becomes a method on the model? collection? [DBU 9/19/13]
@@ -30,8 +31,8 @@ define([
 				}
 			});
 		},
-		highfive: function() {
-			alert('Woohoo! *highfive*');
+		home: function() {
+			var homeView = new HomeView({});
 		}
     });
 
